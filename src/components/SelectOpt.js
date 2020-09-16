@@ -5,20 +5,20 @@ import Select from '@material-ui/core/Select'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField';
 import ImageResult from './ImageResult'
-import { makeStyles } from '@material-ui/core/styles'
+// import { makeStyles } from '@material-ui/core/styles'
 
 
-const useStyles = makeStyles({
-  root: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    border: 0,
-    borderRadius: 3,
-    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-    color: 'white',
-    height: 48,
-    padding: '0 30px',
-  },
-});
+// const useStyles = makeStyles({
+//   root: {
+//     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+//     border: 0,
+//     borderRadius: 3,
+//     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+//     color: 'white',
+//     height: 48,
+//     padding: '0 30px',
+//   },
+// });
 
 export default class SelectOpt extends Component {
     state = {
@@ -28,8 +28,6 @@ export default class SelectOpt extends Component {
         search : '',
         image : [],
       };
-      
-
 
       searchChange = (e) =>{
           this.setState({[e.target.name] : e.target.value});
@@ -43,7 +41,7 @@ export default class SelectOpt extends Component {
 
 
   render() {
-    const classes = useStyles();
+    // const classes = useStyles();
       return (
           <div >
            <TextField fullWidth = "true"  name="search" value={ this.state.search } label="Search"  onChange={this.searchChange}  />
@@ -59,7 +57,7 @@ export default class SelectOpt extends Component {
               <MenuItem value={'photo'}>Photo</MenuItem>
               </Select>
               <br />
-              <Button variant="contained" color="primary" onClick ={this.handleChange} className={classes.root}>Search</Button>
+              <Button variant="contained" color="primary" onClick ={this.handleChange}>Search</Button>
 
               {this.state.image.length > 0 ? (<ImageResult images = {this.state.image} /> ) : null }
 

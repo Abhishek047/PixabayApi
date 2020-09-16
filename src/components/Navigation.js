@@ -5,7 +5,7 @@ export class navigation extends Component {
     render() {
         return (
             <div>
-                <AppBar title='League' position='fixed' >
+                <AppBar title='Image Search' position='fixed' >
                 </AppBar>
             </div>
         )
